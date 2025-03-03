@@ -1,0 +1,28 @@
+git config --global user.email jarsilva@bethel.jw.org
+dnf install git make cmake gcc gcc-c++ libtool autoconf automake cmake pkgconfig unzip patch gettext 
+git clone https://github.com/neovim/neovim.git
+cd neovim
+git checkout stable
+make CMAKE_BUILD_TYPE=Release
+make install
+rm -r build/  # clear the CMake cache
+make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
+make install
+export PATH="$HOME/neovim/bin:$PATH"
+yum install epel-release
+dnf install ripgrep
+dnf install fzf
+dnf install fd-find
+mkdir .config
+cd .config
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+dnf install which procps-ng
+git clone https://github.com/eradman/entr.git
+cd entr/
+./configure
+make test
+make install
+dnf copr enable atim/lazygit -y
+dnf install lazygit
+lazygit
+ls **/**/*.py | entr -c python3.11 -m unittest tests.asapcore_tests.components.assets.test_assets.AssetsComponentTestCase.test_asset_not_hi
