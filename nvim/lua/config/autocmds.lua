@@ -6,3 +6,20 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- Disable the concealing in some file formats
+-- The default conceallevel is 3 in LazyVim
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "json", "jsonc", "http", "markdown" },
+  callback = function()
+    vim.wo.conceallevel = 0
+  end,
+})
+
+-- Disable autoformat for python files
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   --pattern = { "python" },
+--   callback = function()
+--     vim.b.autoformat = false
+--   end,
+-- })
