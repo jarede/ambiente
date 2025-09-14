@@ -1,3 +1,15 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
+set -x VISUAL vim
+set -x EDITOR "$VISUAL"
+set -x LD_LIBRARY_PATH "/home/jarede/projetos/bistek/instantclient_12_2:$LD_LIBRARY_PATH"
+set -x BSTK_AMBIENTE dev
+set -x FLASK_APP asaprest
+set -x FLASK_ENV development
+set -x FLASK_DEBUG 1
+set -x SECRET_KEY some_secret_key
+set -x ASAP_AUTH_METHOD fake
+set -x ASAP_LOG_LEVEL INFO
+set -x ASAP_HOST "http://localhost:5000"
+set -x ASAP_DB_HOST unittests-postgres
+set -x ASAP_DB_PORT 5432
+set -x ASAP_DB_NAME asap_local_dev
+set -x ASAP_DB_USER asap_local_dev

@@ -1,3 +1,3 @@
 function lint
-    fd -e py|entr -s 'ruff check app --output-format=concise && pyright app'
+    fd -e py|entr -s 'mypy $argv && ruff check $argv --output-format=concise && pyright $argv'
 end
