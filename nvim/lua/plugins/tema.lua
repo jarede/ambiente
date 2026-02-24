@@ -5,10 +5,31 @@ return {
     priority = 1000,
     opts = {},
   },
+  -- add dracula
+  { "Mofiqul/dracula.nvim" },
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
+    priority = 1000,
+  },
+  {
+    "neanias/everforest-nvim",
+    priority = 1000,
+  },
+  {
+    "tiagovla/tokyodark.nvim",
+    priority = 1000,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "solarized-osaka",
+      -- colorscheme = "tokyodark",
+      -- colorscheme = "dracula",
+      -- colorscheme = "onedark_dark",
     },
   },
   -- filename
